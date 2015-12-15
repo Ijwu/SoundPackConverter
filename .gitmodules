@@ -1,0 +1,3 @@
+[submodule "VpkAccess"]
+	path = VpkAccess
+	url = https://github.com/Ijwu/VpkAccess
