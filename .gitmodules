@@ -1,3 +1,6 @@
 [submodule "VpkAccess"]
 	path = VpkAccess
 	url = https://github.com/Ijwu/VpkAccess
+[submodule "WpkAccess"]
+	path = WpkAccess
+	url = https://github.com/Ijwu/WpkAccess.git
