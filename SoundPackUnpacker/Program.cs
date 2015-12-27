@@ -1,23 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DocoptNet;
 using VPKAccess;
-using VPKAccess.Exceptions;
+using WPKAccess;
 
-namespace SoundPackConverter
+namespace SoundPackUnpacker
 {
     class Program
     {
-        private const string Usage = @"Sound Pack Converter.
+        private const string Usage = @"Sound Pack Unpacker.
 
             Usage:
-                SoundPackConverter.exe unpack <path>
-                SoundPackConverter.exe (-h | --help)
-                SoundPackConverter.exe --version
+                SoundPackUnpacker.exe unpack <path>
+                SoundPackUnpacker.exe (-h | --help)
+                SoundPackUnpacker.exe --version
 
             Options:
                 -h --help     Show this screen.
@@ -27,24 +24,43 @@ namespace SoundPackConverter
 
         public static void Main(string[] args)
         {
-            var arguments = new Docopt().Apply(Usage, args, version: "Sound Pack Converter v1.0", exit: true);
+            var arguments = new Docopt().Apply(Usage, args, version: "Sound Pack Unpacker v1.0", exit: true);
             if (arguments["unpack"].IsTrue)
             {
                 var pathToIndex = arguments["<path>"].ToString();
 
-                UnpackVpk(pathToIndex);
+                var extension = Path.GetExtension(pathToIndex);
+                if (extension == ".vpk")
+                    UnpackVpk(pathToIndex);
+                else if (extension == ".wpk")
+                    UnpackWpk(pathToIndex);
+            }
+        }
+
+        private static void UnpackWpk(string pathToIndex)
+        {
+            Console.WriteLine("Loading WPK archive into memory.");
+            string outDir = Path.Combine(Path.GetDirectoryName(pathToIndex), "WEM Output");
+            if (!Directory.Exists(outDir))
+                Directory.CreateDirectory(outDir);
+            var wpkFile = WpkFile.ReadFile(pathToIndex);
+            Console.WriteLine("Saving extracted file data.");
+            foreach (var wem in wpkFile)
+            {
+                var wemFilePath = Path.Combine(outDir, wem.Name);
+                File.WriteAllBytes(wemFilePath, wem.Data);
             }
         }
 
         private static void UnpackVpk(string path)
         {
             Console.WriteLine("Loading VPK archive into memory.");
-            Console.WriteLine("This may take a while...");
             string curDir = Path.GetDirectoryName(path);
             var file = VpkFileV1.ReadVpkV1File(path);
             int finished = 0;
             int max = file.Files.Count(x => x.FilePath.StartsWith("sounds/vo"));
             Console.WriteLine("Saving extracted file data.");
+            Console.WriteLine("This may take a while...");
             foreach (var entry in file.Files)
             {
                 if (!entry.FilePath.StartsWith("sounds/vo"))

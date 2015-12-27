@@ -7,8 +7,8 @@
     <ProjectGuid>{8A4BC4D9-851E-430F-BD79-78AF2595BF56}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SoundPackConverter</RootNamespace>
-    <AssemblyName>SoundPackConverter</AssemblyName>
+    <RootNamespace>SoundPackUnpacker</RootNamespace>
+    <AssemblyName>SoundPackUnpacker</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -78,6 +78,10 @@
     <ProjectReference Include="..\VPKAccess\VPKAccess.csproj">
       <Project>{2e843175-3de6-4446-b3f2-20e25b07e4fe}</Project>
       <Name>VPKAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpkAccess\WPKAccess\WPKAccess.csproj">
+      <Project>{00a297b8-c2c0-4d9f-829b-423043243b46}</Project>
+      <Name>WPKAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
