@@ -27,13 +27,21 @@ namespace SoundPackUnpacker
             var arguments = new Docopt().Apply(Usage, args, version: "Sound Pack Unpacker v1.0", exit: true);
             if (arguments["unpack"].IsTrue)
             {
-                var pathToIndex = arguments["<path>"].ToString();
+                var pathToFile = arguments["<path>"].ToString();
 
-                var extension = Path.GetExtension(pathToIndex);
+                var extension = Path.GetExtension(pathToFile);
                 if (extension == ".vpk")
-                    UnpackVpk(pathToIndex);
+                {
+                    var version = VpkFileBase.DetermineVpkFileVersion(pathToFile);
+                    if (version == 1)
+                        UnpackVpk(pathToFile);
+                    else if (version == 2)
+                        UnpackVpkV2(pathToFile);
+                    else
+                        Console.WriteLine("Unknown VPK file version detected. Could be an extremely old legacy file or a file too new for this unpacker.");
+                }
                 else if (extension == ".wpk")
-                    UnpackWpk(pathToIndex);
+                    UnpackWpk(pathToFile);
             }
         }
 
@@ -54,7 +62,7 @@ namespace SoundPackUnpacker
 
         private static void UnpackVpk(string path)
         {
-            Console.WriteLine("Loading VPK archive into memory.");
+            Console.WriteLine("Loading VPKv1 archive into memory.");
             string curDir = Path.GetDirectoryName(path);
             var file = VpkFileV1.ReadVpkV1File(path);
             int finished = 0;
@@ -81,7 +89,29 @@ namespace SoundPackUnpacker
 
         private static void UnpackVpkV2(string path)
         {
+            Console.WriteLine("Loading VPKv2 archive into memory.");
+            string curDir = Path.GetDirectoryName(path);
+            var file = VpkFileV2.ReadVpkV2File(path);
+            int finished = 0;
+            int max = file.Files.Count(x => x.FilePath.StartsWith("sounds/vo"));
+            Console.WriteLine("Saving extracted file data.");
+            Console.WriteLine("This may take a while...");
+            foreach (var entry in file.Files)
+            {
+                if (!entry.FilePath.StartsWith("sounds/vo"))
+                    continue;
 
+                var fileDir = Path.Combine(curDir, entry.FilePath);
+                if (!Directory.Exists(Path.GetDirectoryName(fileDir)))
+                {
+                    Directory.CreateDirectory(Path.GetDirectoryName(fileDir));
+                }
+
+                File.WriteAllBytes(fileDir, file.GetDataForDirectoryEntry(entry));
+
+                finished++;
+                DrawProgressBar(finished, max, 20, '#');
+            }
         }
 
         private static void DrawProgressBar(int complete, int maxVal, int barSize, char progressCharacter)
