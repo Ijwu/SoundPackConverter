@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPKAccess", "WpkAccess\WPKA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundPackConverter.Core", "SoundPackConverter.Core\SoundPackConverter.Core.csproj", "{69505255-0E97-4570-95F5-981FB6A42DC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundPackConverter.ConfigEditor", "SoundPackConverter.ConfigEditor\SoundPackConverter.ConfigEditor.csproj", "{34CAD278-CB65-4F3D-A804-E5C35B37C5FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
