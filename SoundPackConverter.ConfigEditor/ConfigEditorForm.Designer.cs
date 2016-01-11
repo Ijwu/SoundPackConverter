@@ -83,6 +83,7 @@
             // 
             // TextBoxEnteredNames
             // 
+            this.TextBoxEnteredNames.AllowDrop = true;
             this.TextBoxEnteredNames.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -91,6 +92,8 @@
             this.TextBoxEnteredNames.Name = "TextBoxEnteredNames";
             this.TextBoxEnteredNames.Size = new System.Drawing.Size(225, 182);
             this.TextBoxEnteredNames.TabIndex = 4;
+            this.TextBoxEnteredNames.DragDrop += new System.Windows.Forms.DragEventHandler(this.TextBoxEnteredNames_DragDrop);
+            this.TextBoxEnteredNames.DragEnter += new System.Windows.Forms.DragEventHandler(this.TextBoxEnteredNames_DragEnter);
             // 
             // ButtonDeleteName
             // 

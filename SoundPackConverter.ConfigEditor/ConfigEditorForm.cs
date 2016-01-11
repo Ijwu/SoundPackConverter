@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using SoundPackConverter.ConfigEditor.Properties;
 using SoundPackConverter.Core;
@@ -11,13 +12,13 @@ namespace SoundPackConverter.ConfigEditor
     public partial class ConfigEditorForm : Form
     {
         private ConverterConfig _config = new ConverterConfig();
+        private readonly Regex FileNameRegex = new Regex("^(ann)?(ouncer)?_?(?<FileSubstring>.*).(vsnd_c|mp3)");
 
         public ConfigEditorForm()
         {
             InitializeComponent();
             PopulateEffectTypeListbox();
             ListBoxEffectType.SelectedIndex = 0;
-            TextBoxEnteredNames.Text = Resources.TextBoxEnteredNames_Instructions;
         }
 
         private void ButtonLoad_Click(object sender, EventArgs e)
@@ -116,6 +117,20 @@ namespace SoundPackConverter.ConfigEditor
             var itemsArray = _config.DotaFileMappings[(SoundEffectType) ListBoxEffectType.SelectedItem].ToArray();
             itemsArray = itemsArray.OrderBy(x => x).ToArray();
             ListBoxSoundName.Items.AddRange(itemsArray);
+        }
+
+        private void TextBoxEnteredNames_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.Copy;
+        }
+
+        private void TextBoxEnteredNames_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] filePaths = (string[])e.Data.GetData(DataFormats.FileDrop);
+            var fileNames = filePaths.Select(x => Path.GetFileName(x));
+            var extractedNames = fileNames.Select(x => FileNameRegex.Match(x).Groups["FileSubstring"].Value).Where(x => !string.IsNullOrWhiteSpace(x));
+            ListBoxSoundName.Items.AddRange(extractedNames.ToArray());
         }
     }
 }
