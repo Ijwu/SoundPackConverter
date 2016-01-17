@@ -96,6 +96,7 @@ namespace SoundPackConverter.ConfigEditor
             foreach (int selectedIndex in orderedIndices)
             {
                 ListBoxSoundName.Items.RemoveAt(selectedIndex);
+                _config.DotaFileMappings[(SoundEffectType)ListBoxEffectType.SelectedItem].RemoveAt(selectedIndex);
             }
         }
 
@@ -131,6 +132,7 @@ namespace SoundPackConverter.ConfigEditor
             var fileNames = filePaths.Select(x => Path.GetFileName(x));
             var extractedNames = fileNames.Select(x => FileNameRegex.Match(x).Groups["FileSubstring"].Value).Where(x => !string.IsNullOrWhiteSpace(x));
             ListBoxSoundName.Items.AddRange(extractedNames.ToArray());
+            _config.DotaFileMappings[(SoundEffectType)ListBoxEffectType.SelectedItem].AddRange(extractedNames.ToList());
         }
     }
 }
