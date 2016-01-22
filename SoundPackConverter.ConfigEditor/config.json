@@ -1,0 +1,244 @@
+﻿{
+  "Game Cues": {
+    "Game Mode Cues": {
+      "Altars": [
+        "ThirtySecondAltarWarning",
+        "AltarsUnlocked"
+      ],
+      "Points": [
+        "EnemyScoredPoint",
+        "ScoredPoint",
+        "AllyScoredPoint"
+      ],
+      "Almost Won": [
+        "EnemyAlmostWon",
+        "AlmostWon",
+        "AllyAlmostWon"
+      ],
+      "Snowdown Showdown": {
+        "Nearly Out of Minions": [
+          "BlueTeamNearlyOutOfMinions",
+          "RedTeamNEarlyOutOfMinions"
+        ],
+        "Lost Half of Minion": [
+          "BlueTeamLostHalfMinions",
+          "RedTeamLostHalfMinions"
+        ],
+        "Turret Nearly Destroyed": [
+          "BlueTeamTurretNearlyDestroyed",
+          "RedTeamTurretNearlyDestroyed"
+        ],
+        "Turret Half Health": [
+          "RedTeamTurretHalfHealth",
+          "BlueTeamTurretHalfHealth"
+        ]
+      }
+    },
+    "Game Start": {
+      "Welcome": [
+        "Welcome",
+        "SummonerRiftWelcome",
+        "LeagueOfLegendsWelcome",
+        "TwistedTreelineWelcome",
+        "HowlingAbyssWelcome",
+        "SnowdownShowdownWelcome",
+        "CrystalScarWelcome",
+        "MurderBridgeWelcome"
+      ],
+      "Minions": [
+        "MinionsSpawned",
+        "OneMinuteMinionWarning",
+        "ThirtySecondMinionWarning"
+      ],
+      "Battle": [
+        "ThirtySecondsBattleWarning",
+        "BattleBegun"
+      ]
+    },
+    "Game End": [
+      "Victory",
+      "Defeat",
+      "BlueTeamVictory",
+      "PurpleTeamVictory",
+      "RedTeamVictory"
+    ],
+    "Surrender": [
+      "BlueTeamSurrendered",
+      "PurpleTeamSurrendered",
+      "RedTeamSurrendered"
+    ]
+  },
+  "Killing": {
+    "Killing Cues": {
+      "Misc": [
+        "FirstBlood",
+        "Shutdown"
+      ],
+      "Ace": [
+        "Aced",
+        "BlueTeamAce",
+        "PurpleTeamAce",
+        "RedTeamAce"
+      ]
+    },
+    "Killing Streak": {
+      "Double Kill": [
+        "DoubleKill",
+        "EnemyDoubleKill",
+        "RedTeamDoubleKill",
+        "BlueTeamDoubleKill",
+        "PurpleTeamDoubleKill",
+      ],
+      "Triple Kill": [
+        "EnemyTripleKill",
+        "TripleKill",
+        "BlueTeamTripleKill",
+        "PurpleTeamTripleKill",
+        "RedTeamTripleKill"
+      ],
+      "Quadra Kill": [
+        "EnemyQuadraKill",
+        "QuadraKill",
+        "BlueTeamQuadraKill",
+        "PurpleTeamQuadraKill",
+        "RedTeamQuadraKill"
+      ],
+      "Penta Kill": [
+        "EnemyPentaKill",
+        "PentaKill",
+        "BlueTeamPentaKill",
+        "PurpleTeamPentaKill",
+        "RedTeamPentaKill"
+      ],
+      "Legendary Kill": [
+        "EnemyLegendaryKill",
+        "LegendaryKill",
+        "BlueTeamLegendaryKill",
+        "PurpleTeamLegendaryKill",
+        "RedTeamLegendaryKill"
+      ],
+      "Hexa Kill": [
+        "BlueTeamHexaKill",
+        "EnemyHexaKill",
+        "RedTeamHexaKill",
+        "HexaKill"
+      ]
+    },
+    "Killing Spree": {
+      "Killing Spree": [
+        "EnemyKillingSpree",
+        "KillingSpree"
+      ],
+      "Rampage": [
+        "EnemyRampage",
+        "Rampage"
+      ],
+      "Unstoppable": [
+        "EnemyUnstoppable",
+        "Unstoppable"
+      ],
+      "Dominating": [
+        "EnemyDominating",
+        "Dominating"
+      ],
+      "Godlike": [
+        "EnemyGodlike",
+        "Godlike"
+      ],
+      "Legendary": [
+        "EnemyLegendary",
+        "Legendary"
+      ]
+    }
+  },
+  "Summoner": {
+    "Summoner Disconnected": [
+      "SummonerQuit",
+      "EnemyQuit",
+      "AllyQuit"
+    ],
+    "Summoner Reconnected": [
+      "SummonerRejoined",
+      "EnemyRejoined",
+      "AllyRejoined"
+    ]
+  },
+  "Structures": {
+    "Turret": {
+      "Turret Attacked": [
+        "AllyTurretAttacked",
+        "BlueTeamTurretAttacked",
+        "PurpleTeamTurretAttacked",
+        "RedTeamTurretAttacked"
+      ],
+      "Turret Destroyed": [
+        "EnemyTurretDestroyed",
+        "AllyTurretDestroyed",
+        "BlueTeamTurretDestroyed",
+        "PurpleTeamTurretDestroyed",
+        "RedTeamTurretDestroyed"
+      ]
+    },
+    "Nexus": {
+      "Nexus Attacked": [
+        "AllyNexusAttacked",
+        "BlueTeamNexusAttacked",
+        "PurpleTeamNexusAttacked",
+        "RedTeamNexusAttacked"
+      ]
+    },
+    "Inhibitor": {
+      "Inhibitor Attacked": [
+        "AllyInhibitorAttacked",
+        "BlueTeamInhibitorAttacked",
+        "PurpleTeamInhibitorAttacked",
+        "RedTeamInhibitorAttacked"
+      ],
+      "Inhibitor Destroyed": [
+        "EnemyInhibitorDestroyed",
+        "AllyInhibitorDestroyed",
+        "BlueTeamInhibitorDestroyed",
+        "PurpleTeamInhibitorDestroyed",
+        "RedTeamInhibitorDestroyed"
+      ],
+      "Inhibitor Respawning": [
+        "EnemyInhibitorRespawning",
+        "AllyInhibitorRespawning",
+        "BlueTeamInhibitorRespawning",
+        "PurpleTeamInhibitorRespawning",
+        "RedTeamInhibitorRespawning"
+      ],
+      "Inhibitor Respawned": [
+        "EnemyInhibitorRespawned",
+        "RedTeamInhibitorRespawned",
+        "AllyInhibitorRespawned",
+        "BlueTeamInhibitorRespawned",
+        "PurpleTeamInhibitorRespawned"
+      ]
+    }
+  },
+  "Slain": {
+    "Champion": [
+      "ChampionSlain",
+      "AllySlain",
+      "EnemySlain",
+      "YouWereSlain",
+      "YouSlainEnemy"
+    ],
+    "Dragon": [
+      "BlueTeamDragonSlain",
+      "PurpleTeamDragonSlain",
+      "RedTeamDragonSlain"
+    ],
+    "Baron": [
+      "BlueTeamBaronSlain",
+      "PurpleTeamBaronSlain",
+      "RedTeamBaronSlain"
+    ]
+  },
+    "Misc": [
+      "Terminated",
+      "Neutralized",
+      "Executed"
+    ]
+  }

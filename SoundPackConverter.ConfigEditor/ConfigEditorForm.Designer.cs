@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ListBoxEffectType = new System.Windows.Forms.ListBox();
             this.ListBoxSoundName = new System.Windows.Forms.ListBox();
             this.GroupBoxSoundNameEditing = new System.Windows.Forms.GroupBox();
             this.TextBoxEnteredNames = new System.Windows.Forms.TextBox();
@@ -39,21 +38,11 @@
             this.ButtonSave = new System.Windows.Forms.Button();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.TreeViewEffectName = new System.Windows.Forms.TreeView();
             this.GroupBoxSoundNameEditing.SuspendLayout();
             this.GroupBoxSaveLoadMenu.SuspendLayout();
             this.StatusStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ListBoxEffectType
-            // 
-            this.ListBoxEffectType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ListBoxEffectType.FormattingEnabled = true;
-            this.ListBoxEffectType.Location = new System.Drawing.Point(12, 12);
-            this.ListBoxEffectType.Name = "ListBoxEffectType";
-            this.ListBoxEffectType.Size = new System.Drawing.Size(179, 316);
-            this.ListBoxEffectType.TabIndex = 0;
-            this.ListBoxEffectType.SelectedIndexChanged += new System.EventHandler(this.ListBoxEffectType_SelectedIndexChanged);
             // 
             // ListBoxSoundName
             // 
@@ -68,8 +57,7 @@
             // 
             // GroupBoxSoundNameEditing
             // 
-            this.GroupBoxSoundNameEditing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.GroupBoxSoundNameEditing.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBoxSoundNameEditing.Controls.Add(this.TextBoxEnteredNames);
             this.GroupBoxSoundNameEditing.Controls.Add(this.ButtonDeleteName);
@@ -119,8 +107,7 @@
             // 
             // GroupBoxSaveLoadMenu
             // 
-            this.GroupBoxSaveLoadMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupBoxSaveLoadMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBoxSaveLoadMenu.Controls.Add(this.ButtonLoad);
             this.GroupBoxSaveLoadMenu.Controls.Add(this.ButtonSave);
             this.GroupBoxSaveLoadMenu.Location = new System.Drawing.Point(197, 12);
@@ -167,16 +154,27 @@
             this.ToolStripStatusLabel.Name = "ToolStripStatusLabel";
             this.ToolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
+            // TreeViewEffectName
+            // 
+            this.TreeViewEffectName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TreeViewEffectName.Location = new System.Drawing.Point(12, 12);
+            this.TreeViewEffectName.Name = "TreeViewEffectName";
+            this.TreeViewEffectName.Size = new System.Drawing.Size(179, 316);
+            this.TreeViewEffectName.TabIndex = 5;
+            this.TreeViewEffectName.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeViewEffectName_AfterSelect);
+            // 
             // ConfigEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 361);
+            this.Controls.Add(this.TreeViewEffectName);
             this.Controls.Add(this.StatusStrip);
             this.Controls.Add(this.GroupBoxSaveLoadMenu);
             this.Controls.Add(this.GroupBoxSoundNameEditing);
             this.Controls.Add(this.ListBoxSoundName);
-            this.Controls.Add(this.ListBoxEffectType);
             this.MinimumSize = new System.Drawing.Size(650, 400);
             this.Name = "ConfigEditorForm";
             this.Text = "Sound Pack Converter Config Editor";
@@ -191,8 +189,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox ListBoxEffectType;
         private System.Windows.Forms.ListBox ListBoxSoundName;
         private System.Windows.Forms.GroupBox GroupBoxSoundNameEditing;
         private System.Windows.Forms.TextBox TextBoxEnteredNames;
@@ -203,6 +199,7 @@
         private System.Windows.Forms.Button ButtonSave;
         private System.Windows.Forms.StatusStrip StatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel ToolStripStatusLabel;
+        private System.Windows.Forms.TreeView TreeViewEffectName;
     }
 }
 
