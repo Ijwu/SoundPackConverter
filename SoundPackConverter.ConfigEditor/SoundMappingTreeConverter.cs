@@ -6,6 +6,9 @@ using Newtonsoft.Json.Linq;
 
 namespace SoundPackConverter.ConfigEditor
 {
+    /// <summary>
+    /// Maps a json file to a <![CDATA[ List<TreeNode> ]]> .
+    /// </summary>
     public class SoundMappingTreeConverter : JsonConverter
     {
         public override bool CanWrite { get; } = false;

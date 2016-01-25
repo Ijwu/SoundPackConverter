@@ -1,5 +1,9 @@
 ﻿namespace SoundPackConverter.Core
 {
+    /// <summary>
+    /// Audio cues which signify when a sound is played.
+    /// The cues, by nature, indicate which sound should be played as well.
+    /// </summary>
     public enum SoundEffectType
     {
         HowlingAbyssWelcome,
