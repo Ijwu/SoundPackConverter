@@ -4,3 +4,6 @@
 [submodule "WpkAccess"]
 	path = WpkAccess
 	url = https://github.com/Ijwu/WpkAccess.git
+[submodule "CommonMvvm"]
+	path = CommonMvvm
+	url = https://github.com/Karmadilla/CommonMvvm.git

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundPackConverter.Core", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundPackConverter.ConfigEditor", "SoundPackConverter.ConfigEditor\SoundPackConverter.ConfigEditor.csproj", "{34CAD278-CB65-4F3D-A804-E5C35B37C5FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundPackConverter.ConfigEditor.WPF", "SoundPackConverter.ConfigEditor.WPF\SoundPackConverter.ConfigEditor.WPF.csproj", "{0461836F-A558-4671-B846-4E63B9429915}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,22 @@ Global
 		{34CAD278-CB65-4F3D-A804-E5C35B37C5FF}.Release|x64.Build.0 = Release|Any CPU
 		{34CAD278-CB65-4F3D-A804-E5C35B37C5FF}.Release|x86.ActiveCfg = Release|Any CPU
 		{34CAD278-CB65-4F3D-A804-E5C35B37C5FF}.Release|x86.Build.0 = Release|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Debug|ARM.Build.0 = Debug|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Debug|x64.Build.0 = Debug|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Debug|x86.Build.0 = Debug|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Release|ARM.ActiveCfg = Release|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Release|ARM.Build.0 = Release|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Release|x64.ActiveCfg = Release|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Release|x64.Build.0 = Release|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Release|x86.ActiveCfg = Release|Any CPU
+		{0461836F-A558-4671-B846-4E63B9429915}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
