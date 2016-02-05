@@ -23,8 +23,6 @@ namespace SoundPackConverter.ConfigEditor.WPF
         public EditorWindow()
         {
             InitializeComponent();
-
-            DataContext = new EditorWindowViewModel();
         }
     }
 }
